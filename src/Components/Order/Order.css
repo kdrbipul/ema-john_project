@@ -6,6 +6,9 @@
 
 
 .toast{
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 264px;
     height: 944px;
 /* flex-shrink: 0; */
@@ -92,3 +95,37 @@
 .progress.active:before{
     animation: progress 5s linear forwards;
 } */
+
+
+
+@media only screen and (min-width:0px) and (max-width:319px) {
+    .my_grid{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin: 0 auto;
+    }
+    
+}
+@media only screen and (min-width:320px) and (max-width:468px) {
+    .my_grid{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    
+}
+@media only screen and (min-width:469px) and (max-width:768px) {
+    .my_grid{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: hidden;
+    }
+    
+}
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .my_grid{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: hidden;
+    }
+    
+}

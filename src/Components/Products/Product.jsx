@@ -7,8 +7,8 @@ const Product = ({product}) => {
     return (
         <>
         
-        <div className='container my-5 py-1 grid'>
-            <div className="card g-col-4" style={{width: "18rem"}}>
+        <div className='my-5 py-1 my_product'>
+            <div className="card g-col-4 my_card" style={{width: "18rem"}}>
                 <div className=''>
                     <img src={img} className="card-img-top" alt="..." />
                 </div>
