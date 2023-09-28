@@ -25,13 +25,8 @@ const Order = () => {
                 {
                    products.map(product=> <Product key={product.id} product={product}></Product>) 
                 }
-                <div className="toast">
-                    <h1>Order Summery</h1>
-                </div>
             </div>
-
-
-            
+                
         </>
         
     );

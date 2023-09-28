@@ -8,7 +8,7 @@ const Product = ({product}) => {
         <>
         
         <div className='my-5 py-1 my_product'>
-            <div className="card g-col-4 my_card" style={{width: "18rem"}}>
+            <div className="card g-col-4 my_card" style={{width: "22rem"}}>
                 <div className=''>
                     <img src={img} className="card-img-top" alt="..." />
                 </div>
@@ -19,6 +19,9 @@ const Product = ({product}) => {
                     <p className="card-text">Ratings : {ratings}</p>
                     <a href="#" className="btn btn-outline-warning w-100">Add To Card <BiCartAdd></BiCartAdd> </a>
                 </div>
+            </div>
+            <div className="toast">
+                <h1>Order Summery</h1>
             </div>
         </div>
     </>

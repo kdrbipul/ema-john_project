@@ -5,15 +5,7 @@
 }
 
 
-.toast{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 264px;
-    height: 944px;
-/* flex-shrink: 0; */
-    background-color:rgba(255, 153, 0, 0.30);
-}
+
 
 /* .toast{
     background-color: tomato;
