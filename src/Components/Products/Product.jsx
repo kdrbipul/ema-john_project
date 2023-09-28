@@ -20,9 +20,7 @@ const Product = ({product}) => {
                     <a href="#" className="btn btn-outline-warning w-100">Add To Card <BiCartAdd></BiCartAdd> </a>
                 </div>
             </div>
-            <div className="toast">
-                <h1>Order Summery</h1>
-            </div>
+           
         </div>
     </>
     );

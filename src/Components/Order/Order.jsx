@@ -21,12 +21,16 @@ const Order = () => {
     
     return (
         <>
-            <div className='container my_grid'>
-                {
-                   products.map(product=> <Product key={product.id} product={product}></Product>) 
-                }
-            </div>
-                
+            <div className='parent'>
+                <div className='container my_grid'>
+                    {
+                    products.map(product=> <Product key={product.id} product={product}></Product>) 
+                    }
+                </div>
+                <div className="toast">
+                    <h1>Order Summery</h1>
+                </div>
+            </div>     
         </>
         
     );
