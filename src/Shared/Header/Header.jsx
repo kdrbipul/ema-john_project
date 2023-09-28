@@ -1,26 +1,37 @@
 import React from 'react';
+import { NavLink } from 'react-bootstrap';
 import logo from '../../assets/images/Logo (2).svg'
 
 const Header = () => {
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg bg-secondary-subtle">
-                <div className="container d-flex justify-content-between">
+        <>
+        <nav className="navbar navbar-expand-lg bg-warning">
+            <div className="container">
+                
                     <a className="navbar-brand" href="#"><img src={logo} alt="" /></a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            <a className="nav-link" href="#">Features</a>
-                            <a className="nav-link" href="#">Pricing</a>
-                            <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </div>
-                    </div>
+                
+                <div className="collapse navbar-collapse align-items-end justify-content-end" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                        <NavLink className="nav-link active" aria-current="page" to="/">Order</NavLink>
+                        </li>
+                        <li className="nav-item">
+                        <NavLink className="nav-link" to="/">Order Review</NavLink>
+                        </li>
+                        <li className="nav-item">
+                        <NavLink className="nav-link" to="/">Manage Inventory</NavLink>
+                        </li>
+                        <li className="nav-item">
+                        <NavLink className="nav-link" to="/">Sign In</NavLink>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
+        </>
     );
 };
 
