@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import OrderSummery from '../OrderSummery/OrderSummery';
 import Product from '../Products/Product';
 import "./Order.css"
 
@@ -16,20 +17,25 @@ const Order = () => {
     console.log(setProducts);
 
 
-    
-    
-    
+    const [showCart, setShowCart] = useState('');
+    const button = document.querySelector(".m_button");
+    const closeIcon = document.querySelector(".close");
+    const handleSideBar = (product) =>{
+        console.log(product);
+        
+    }
+
+
+
     return (
         <>
             <div className='parent'>
                 <div className='container my_grid'>
                     {
-                    products.map(product=> <Product key={product.id} product={product}></Product>) 
+                        products.map(product=> <Product key={product.id} product={product} handleSideBar={handleSideBar}></Product>) 
                     }
                 </div>
-                <div className="toast">
-                    <h1>Order Summery</h1>
-                </div>
+               <OrderSummery></OrderSummery>
             </div>     
         </>
         

@@ -1,14 +1,17 @@
-import React from 'react';
+
 import { BiCartAdd } from 'react-icons/bi';
 import "./Products.css"
-const Product = ({product}) => {
+const Product = ({product,handleSideBar,sideshow}) => {
     // console.log(product);
     const {img,name,seller,price,ratings} = product;
+ 
+
+
     return (
         <>
         
         <div className='my-5 py-1 my_product'>
-            <div className="card g-col-4 my_card" style={{width: "22rem"}}>
+            <div className="card g-col-4 my_card" style={{width: "18rem"}}>
                 <div className=''>
                     <img src={img} className="card-img-top" alt="..." />
                 </div>
@@ -17,7 +20,7 @@ const Product = ({product}) => {
                     <p className="card-text">Company : {seller}</p>
                     <p className="card-text">Price : ${price}</p>
                     <p className="card-text">Ratings : {ratings}</p>
-                    <a href="#" className="btn btn-outline-warning w-100">Add To Card <BiCartAdd></BiCartAdd> </a>
+                    <button href="#" className="btn btn-outline-warning w-100 m_button" onClick={()=>handleSideBar (product)}>Add To Card <BiCartAdd></BiCartAdd> </button>
                 </div>
             </div>
            
