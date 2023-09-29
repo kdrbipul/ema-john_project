@@ -3,8 +3,8 @@
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     border-radius: 12px;
     padding: 20px 35px 20px 25px;
-    position: absolute;
-    top: 25px;
+    position: fixed;
+    top: 122px;
     right: 30px;
     border-left: 6px solid #DC3545;
     overflow: hidden;
@@ -123,6 +123,10 @@
     transition: transform 0.2s ease;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     margin: 8px 0;
+    transition: all 400ms linear;
+}
+.m_button:hover{
+    background-color: #4070f4;
 }
 
 .m_button:active{

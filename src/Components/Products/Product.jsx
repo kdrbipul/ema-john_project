@@ -1,7 +1,7 @@
 
 import { BiCartAdd } from 'react-icons/bi';
 import "./Products.css"
-const Product = ({product,handleSideBar,sideshow}) => {
+const Product = ({product,handleAddToCart}) => {
     // console.log(product);
     const {img,name,seller,price,ratings} = product;
  
@@ -20,7 +20,7 @@ const Product = ({product,handleSideBar,sideshow}) => {
                     <p className="card-text">Company : {seller}</p>
                     <p className="card-text">Price : ${price}</p>
                     <p className="card-text">Ratings : {ratings}</p>
-                    <button href="#" className="btn btn-outline-warning w-100 m_button" onClick={()=>handleSideBar (product)}>Add To Card <BiCartAdd></BiCartAdd> </button>
+                    <button href="#" className="btn btn-outline-warning w-100 m_button" onClick={()=>handleAddToCart (product)}>Add To Card <BiCartAdd></BiCartAdd> </button>
                 </div>
             </div>
            

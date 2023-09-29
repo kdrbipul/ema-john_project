@@ -5,7 +5,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { AiOutlineCheck } from 'react-icons/ai';
 
-const OrderSummery = () => {
+const OrderSummery = ({cart}) => {
     return (
         <>
             <div className="testy bg-warning">
@@ -13,7 +13,7 @@ const OrderSummery = () => {
                     {/* <i className="check"><AiOutlineCheck></AiOutlineCheck></i> */}
                     <div className="message">
                         <span className="text text-1">Order Summery</span>
-                        <span className="text text-2">Selected Items: 1</span>
+                        <span className="text text-2">Selected Items: {cart.length}</span>
                         <span className="text text-2">Total Price: $ </span>
                         <span className="text text-2">Total Price: $ </span>
                         <span className="text text-2">Total Shipping Charge: $ </span>

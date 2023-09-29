@@ -17,11 +17,13 @@ const Order = () => {
     console.log(setProducts);
 
 
-    const [showCart, setShowCart] = useState('');
-    const button = document.querySelector(".m_button");
-    const closeIcon = document.querySelector(".close");
-    const handleSideBar = (product) =>{
-        console.log(product);
+    const [cart, setCart] = useState([]);
+
+    
+    const handleAddToCart = (product) =>{
+        // console.log(product);
+        const newCart =[...cart, product]; 
+        setCart(newCart);
         
     }
 
@@ -32,10 +34,10 @@ const Order = () => {
             <div className='parent'>
                 <div className='container my_grid'>
                     {
-                        products.map(product=> <Product key={product.id} product={product} handleSideBar={handleSideBar}></Product>) 
+                        products.map(product=> <Product key={product.id} product={product} handleAddToCart={handleAddToCart}></Product>) 
                     }
                 </div>
-               <OrderSummery></OrderSummery>
+               <OrderSummery cart={cart}></OrderSummery>
             </div>     
         </>
         
