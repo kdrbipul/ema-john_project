@@ -26,6 +26,9 @@ const Order = () => {
         setCart(newCart);
         
     }
+    const handleClearCart = () => {
+        setCart([]);
+    }
 
 
 
@@ -37,7 +40,7 @@ const Order = () => {
                         products.map(product=> <Product key={product.id} product={product} handleAddToCart={handleAddToCart}></Product>) 
                     }
                 </div>
-               <OrderSummery cart={cart}></OrderSummery>
+               <OrderSummery cart={cart} handleClearCart={handleClearCart}></OrderSummery>
             </div>     
         </>
         
