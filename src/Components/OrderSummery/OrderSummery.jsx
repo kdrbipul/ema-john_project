@@ -9,6 +9,7 @@ const OrderSummery = ({cart,handleClearCart}) => {
     
     let total = 0; let shipping = 0; let quantity = 0;
     for(const product of cart){
+        quantity = quantity + product.quantity;
         total = total + (product.price * product.quantity)
         shipping = shipping + product.shipping;
     }
@@ -28,19 +29,19 @@ const OrderSummery = ({cart,handleClearCart}) => {
         })
     })
 
-    const Sbutton = document.querySelectorAll("s_button");
-    // console.log(Sbutton);
-    const closeIcon = document.querySelector(".close");
-    // console.log(closeIcon);
-    Sbutton.forEach(Sbutton =>{
-        Sbutton.addEventListener("click", () =>{
-            testy.classList.add("active");
-        });
+    // const Sbutton = document.querySelectorAll("s_button");
+    // // console.log(Sbutton);
+    // const closeIcon = document.querySelector(".close");
+    // // console.log(closeIcon);
+    // Sbutton.forEach(Sbutton =>{
+    //     Sbutton.addEventListener("click", () =>{
+    //         testy.classList.add("active");
+    //     });
         
-        closeIcon.addEventListener("click",()=>{
-            testy.classList.remove("active");
-        });
-    })
+    //     closeIcon.addEventListener("click",()=>{
+    //         testy.classList.remove("active");
+    //     });
+    // })
     return (
         <>
             <div className="testy bg-warning">

@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 const OrderReview = () => {
 
     const products = useLoaderData();
-    const Product = products.slice(0,5);
+    const Product = products;
 
     return (
         <div className='container'>
