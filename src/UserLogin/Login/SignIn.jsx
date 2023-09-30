@@ -4,30 +4,15 @@ import "./Signin.css"
 
 const SignIn = () => {
 
-    // function myFunction() {
-    //     var x = document.getElementById("myInput");
-    //     if (x.type === "password") {
-    //       x.type = "text";
-    //     } else {
-    //       x.type = "password";
-    //     }
-    //   }
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
     
-    //   const showPassword = () =>{
-    //     const showPass = document.getElementById('showpass');
-    //     const visible = document.getElementById('myInput');
-    //     showPass.forEach(show=>{
-    //     show.addEventListener("click", (e)=>{
-    //         e.preventDefault();
-    //         if(visible.type === "password"){
-    //             visible.type = "text"
-    //         }else{
-    //             visible.type ="password"
-    //         }
-    //     })
-    //     })
-
-    //   }
         
 
     return (
@@ -43,10 +28,10 @@ const SignIn = () => {
                         </div>
                         <div className="m_card_content">
                             <label for="name" className='m_card_content-text'>Password : </label><br />
-                            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                            <input type="password" id="myInput" name="password" placeholder="Enter your password" required />
                         </div>
                         <div>
-                            <input type="checkbox"   required />Show Password
+                            <input type="checkbox" onClick={()=>myFunction()}   required />Show Password
                             <label for="name"></label>
                         </div>
                         <button className='btn btn-link text-decoration-none'>Forget Password?</button>
