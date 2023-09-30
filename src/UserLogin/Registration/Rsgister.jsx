@@ -1,32 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./Register.css"
 
 const Rsgister = () => {
     return (
         <>
-       <form className='container my-5 py-5 justify-content-center align-items-center  bg-warning rounded-2'>
-            <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label">Name</label>
-                <input type="text" name="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+       <div className="container">
+                
+                <div className="m_card">
+                    <form className='s_form' action="">
+                    <h1>Sign In</h1>
+                        <div className="m_card_content">
+                            <label for="name" className='m_card_content-text'>Name : </label><br />
+                            <input type="text" id="name" name="name" placeholder="Enter your email address" required />
+                        </div>
+                        <div className="m_card_content">
+                            <label for="name" className='m_card_content-text'>Email : </label><br />
+                            <input type="text" id="name" name="email" placeholder="Enter your email address" required />
+                        </div>
+                        <div className="m_card_content">
+                            <label for="name" className='m_card_content-text'>Password : </label><br />
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                        </div>
+                        <div>
+                            <input type="checkbox"   required />Show Password
+                            <label for="name"></label>
+                        </div>
+                        <div>
+                            <button className='btn btn-danger w-100 py-2 my-2'>Sign In</button>
+                        </div>
+                        <div>
+                            <span>Already have an account?<Link to="/signin" className='text-decoration-none'>Please Login</Link></span>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label">Email address</label>
-                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div className="mb-3">
-                <label for="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" name="password" className="form-control" id="exampleInputPassword1"/>
-            </div>
-            <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                <label className="form-check-label" for="exampleCheck1">Show Password</label>
-            </div>
-            <div className="mb-3 form-check">
-                <span className=''>Already have an account?<Link to="/signin">Login</Link></span>
-            </div>
-            <button type="submit" className="btn btn-danger w-100">Submit</button>
-        </form>
             
         </>
         

@@ -1,42 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./Signin.css"
 
 const SignIn = () => {
 
-    function myFunction() {
-        var x = document.getElementById("myInput");
-        if (x.type === "password") {
-          x.type = "text";
-        } else {
-          x.type = "password";
-        }
-      }
-
-      const handleShoPassword =()=>{
-
-      }
+    // function myFunction() {
+    //     var x = document.getElementById("myInput");
+    //     if (x.type === "password") {
+    //       x.type = "text";
+    //     } else {
+    //       x.type = "password";
+    //     }
+    //   }
     
+    //   const showPassword = () =>{
+    //     const showPass = document.getElementById('showpass');
+    //     const visible = document.getElementById('myInput');
+    //     showPass.forEach(show=>{
+    //     show.addEventListener("click", (e)=>{
+    //         e.preventDefault();
+    //         if(visible.type === "password"){
+    //             visible.type = "text"
+    //         }else{
+    //             visible.type ="password"
+    //         }
+    //     })
+    //     })
+
+    //   }
+        
 
     return (
-        <form className='container my-5 py-5 justify-content-center align-items-center  bg-warning rounded-2'>
-            <div className="mb-3">
-                <label  className="form-label">Email address</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+        <>
+            <div className="container">
+                
+                <div className="m_card">
+                    <form className='s_form' action="">
+                    <h1>Sign In</h1>
+                        <div className="m_card_content">
+                            <label for="name" className='m_card_content-text'>Email : </label><br />
+                            <input type="text" id="name" name="email" placeholder="Enter your email address" required />
+                        </div>
+                        <div className="m_card_content">
+                            <label for="name" className='m_card_content-text'>Password : </label><br />
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+                        </div>
+                        <div>
+                            <input type="checkbox"   required />Show Password
+                            <label for="name"></label>
+                        </div>
+                        <button className='btn btn-link text-decoration-none'>Forget Password?</button>
+                        <div>
+                            <button className='btn btn-danger w-100 py-2 my-2'>Sign In</button>
+                        </div>
+                        <div>
+                            <span>You are a new user?<Link to="/register" className='text-decoration-none'>Sign Up</Link></span>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div className="mb-3">
-                <label  className="form-label">Password</label>
-                <input type="password" className="form-control" id="myInput"  onClick={()=>handleShoPassword}/>
-            </div>
-            <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                <label className="form-check-label" for="exampleCheck1">Show Password</label>
-            </div>
-            <div className="mb-3 form-check">
-                <span className=''>New user?<Link to="/register">Sign Up</Link></span>
-            </div>
-            <button type="submit" className="btn btn-danger w-100">Submit</button>
-        </form>
+        </>
     );
 };
 
