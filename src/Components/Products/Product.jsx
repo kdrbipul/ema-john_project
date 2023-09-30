@@ -4,8 +4,6 @@ import "./Products.css"
 const Product = ({product,handleAddToCart}) => {
     // console.log(product);
     const {img,name,seller,price,ratings} = product;
- 
-
 
     return (
         <>
@@ -20,7 +18,7 @@ const Product = ({product,handleAddToCart}) => {
                     <p className="card-text">Company : {seller}</p>
                     <p className="card-text">Price : ${price}</p>
                     <p className="card-text">Ratings : {ratings}</p>
-                    <button href="#" className="btn btn-outline-warning w-100 m_button" onClick={()=>handleAddToCart (product)}>Add To Card <BiCartAdd></BiCartAdd> </button>
+                    <button href="#" className="btn btn-outline-warning w-100 s_button" onClick={()=>handleAddToCart (product)}>Add To Card <BiCartAdd></BiCartAdd> </button>
                 </div>
             </div>
            

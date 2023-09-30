@@ -8,11 +8,11 @@
     right: 30px;
     border-left: 6px solid #DC3545;
     overflow: hidden;
-    /* transform: translateX(calc(100% + 30px)); */
+    transform: translateX(calc(100% + 30px));
     transition: all 400ms linear;
 }
 .testy.active{
-    /* transform: translateX(0%); */
+    transform: translateX(0%);
 }
 
 
