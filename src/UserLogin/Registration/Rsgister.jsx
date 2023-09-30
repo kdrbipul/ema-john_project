@@ -2,11 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { ImGithub } from 'react-icons/im';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import "./Register.css"
 
+const auth = getAuth();
+
 const Rsgister = () => {
+    const googleProvider = new GoogleAuthProvider();
 
-
+    const handleGoogleLogin = () =>{
+        signInWithPopup(auth,googleProvider)
+        .then((result)=>{
+            const user = result.user;
+            console.log(user);
+        })
+    }
 
 
     function myFunction() {
@@ -45,7 +55,7 @@ const Rsgister = () => {
                             <button className='btn btn-danger w-100 py-2 my-2'>Sign In</button>
                         </div>
                         <div>
-                            <button className='btn btn-danger w-100 py-2 my-2'><span className='register_icon'><FcGoogle></FcGoogle></span>Sign In with Google</button>
+                            <button className='btn btn-danger w-100 py-2 my-2'><span className='register_icon' onClick={handleGoogleLogin}><FcGoogle></FcGoogle></span>Sign In with Google</button>
                         </div>
                         <div>
                             <button className='btn btn-danger w-100 py-2 my-2'><span className='register_icon'><ImGithub></ImGithub></span>Sign In with GitHub</button>
