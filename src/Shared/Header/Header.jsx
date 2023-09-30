@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/Logo (2).svg'
+import "./Header.css"
 
 const Header = () => {
     return (
@@ -16,7 +17,7 @@ const Header = () => {
                 <div className="collapse navbar-collapse align-items-end justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                        <NavLink className="nav-link active" aria-current="page" to="/order">Order</NavLink>
+                        <NavLink className="nav-link" aria-current="page" to="/order">Order</NavLink>
                         </li>
                         <li className="nav-item">
                         <NavLink className="nav-link" to="/order-review">Order Review</NavLink>
