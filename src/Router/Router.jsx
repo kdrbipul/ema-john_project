@@ -10,6 +10,10 @@ import SignIn from "../UserLogin/Login/SignIn";
 import Rsgister from "../UserLogin/Registration/Rsgister";
 import Order from './../Components/Order/Order';
 import About from './../Components/Dashboard/About/About';
+import Service from './../Components/Dashboard/Service/Service';
+import Project from "../Components/Dashboard/Project/Project";
+import Contact from "../Components/Dashboard/Contact/Contact";
+import Footer from "../Components/Dashboard/Footer/Footer";
 
 const router = createBrowserRouter([
     {
@@ -55,7 +59,24 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/profile',
                 element:<DashboardProfile />
+            },
+            {
+                path:'/dashboard/service',
+                element:<Service />
+            },
+            {
+                path:'/dashboard/project',
+                element:<Project />
+            },
+            {
+                path:'/dashboard/contact',
+                element:<Contact />
+            },
+            {
+                path:'/dashboard/Footer',
+                element:<Footer />
             }
+
         ]
     }
 ])

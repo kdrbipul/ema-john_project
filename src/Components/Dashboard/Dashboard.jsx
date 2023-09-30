@@ -10,9 +10,10 @@ const Dashboard = () => {
         <div className='my-5'>
             <NavLink to='/dashboard'><button className='btn btn-outline-success'>About</button></NavLink><br />
             <NavLink to='/dashboard/profile'><button className='btn btn-outline-success my-2'>Profile</button></NavLink><br />
-            <NavLink to='/profile'><button className='btn btn-outline-success'>Service</button></NavLink><br />
-            <NavLink to='/profile'><button className='btn btn-outline-success my-2'>Project</button></NavLink><br />
-            <NavLink to='/profile'><button className='btn btn-outline-success'>Contact</button></NavLink><br />
+            <NavLink to='/dashboard/service'><button className='btn btn-outline-success'>Service</button></NavLink><br />
+            <NavLink to='/dashboard/project'><button className='btn btn-outline-success my-2'>Project</button></NavLink><br />
+            <NavLink to='/dashboard/contact'><button className='btn btn-outline-success'>Contact</button></NavLink><br />
+            <NavLink to='/dashboard/Footer'><button className='btn btn-outline-success my-2'>Footer</button></NavLink><br />
         </div>
         <main>
             <Outlet />
