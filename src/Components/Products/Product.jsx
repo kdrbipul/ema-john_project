@@ -1,15 +1,20 @@
 
+import { useState } from 'react';
 import { BiCartAdd } from 'react-icons/bi';
 import "./Products.css"
 const Product = ({product,handleAddToCart}) => {
     // console.log(product);
     const {img,name,seller,price,ratings} = product;
+    const [style,setStyle] = useState();
+    setStyle({
+        width:'18rem'
+    })
 
     return (
         <>
         
         <div className='my-5 py-1 my_product'>
-            <div className="card g-col-4 my_card" style={{width: "18rem"}}>
+            <div className="card g-col-4 my_card" style={style}>
                 <div className=''>
                     <img src={img} className="card-img-top" alt="..." />
                 </div>
