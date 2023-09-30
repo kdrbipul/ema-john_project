@@ -18,7 +18,7 @@ const SignIn = () => {
     
 
     return (
-        <form className='container my-5 py-5 justify-content-center align-items-center w-25 bg-warning rounded-2'>
+        <form className='container my-5 py-5 justify-content-center align-items-center  bg-warning rounded-2'>
             <div className="mb-3">
                 <label  className="form-label">Email address</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />

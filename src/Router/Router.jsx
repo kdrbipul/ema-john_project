@@ -23,7 +23,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/order-review',
-                element:<OrderReview />
+                element:<OrderReview />,
+                loader: () => fetch('product.json')
             },
             {
                 path:'/signin',

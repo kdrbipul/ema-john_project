@@ -6,6 +6,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 // import Product from '../Products/Product';
 import "./Order.css"
+import { Link } from 'react-router-dom';
 
 const Order = () => {
    
@@ -111,7 +112,7 @@ const Order = () => {
                             <span className="text text-2">Tax: ${tax} </span>
                             <h2 className="text text-2">Grand Total: ${Gtotal} </h2>
                             <button className="m_button" onClick={()=> handleClearCart()}>Clear Cart <RiDeleteBin6Line></RiDeleteBin6Line></button>
-                            <button className="m_button">Review Order <AiOutlineArrowRight></AiOutlineArrowRight></button>
+                            <button className="m_button"><Link to="/order-review" className='text-white text-decoration-none'>Review Order<AiOutlineArrowRight></AiOutlineArrowRight></Link></button>
                         </div>
                         <span className="close"><GrClose></GrClose></span>
                         <div className="progress"></div>
