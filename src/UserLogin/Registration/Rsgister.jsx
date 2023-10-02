@@ -1,31 +1,50 @@
-import React, { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { ImGithub } from 'react-icons/im';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import "./Register.css"
 import app from './../../firebase/firebase.config';
+import { AuthContext } from '../../Components/userContext/userContext';
 
-const auth = getAuth(app);
 
 const Rsgister = () => {
-    const googleProvider = new GoogleAuthProvider();
-    const [user, setUser] = useState({});
+    const {createUser,googleLogin} = useContext(AuthContext);
+    const [success, setSuccess] = useState();
 
+
+    const handleSignUp = (e) => {
+        e.prevenDefault();
+        console.log("clicked the button");
+        const form = e.target;
+        console.log(form);
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+        .then(result=>{
+            const user = result.user;
+            form.reset()
+        })
+        .catch((error)=>{
+            "Firebase Error", error;
+        })
+    }
     const handleGoogleLogin = (e) =>{
         e.preventDefault();
-        console.log("Clicked the button");
-        signInWithPopup(auth,googleProvider)
-        .then((result)=>{
+        googleLogin()
+        .then(result=>{
             const user = result.user;
-            console.log(user);
-            setUser(user)
-        }).catch((error)=>{
-            "Firebase error", error;
+
+        })
+        .catch((error)=>{
+            "Firebase Error", error;
         })
     }
 
 
+
+    
     function myFunction() {
         var x = document.getElementById("myInput");
         if (x.type === "password") {
@@ -38,31 +57,30 @@ const Rsgister = () => {
     return (
         <>
        <div className="container">
-                <div user={user}></div>
                 <div className="m_card">
-                    <form className='s_form' action="">
+                    <form onSubmit={handleSignUp} className='s_form' action="">
                     <h1>Sign In</h1>
                         <div className="m_card_content">
                             <label for="name" className='m_card_content-text'>Name : </label><br />
-                            <input type="text" id="name" name="name" placeholder="Enter your email address"  />
+                            <input type="text" id="name" name="name" placeholder="Enter your name" />
                         </div>
                         <div className="m_card_content">
                             <label for="name" className='m_card_content-text'>Email : </label><br />
-                            <input type="text" id="name" name="email" placeholder="Enter your email address"  />
+                            <input type="text" id="name" name="email" placeholder="Enter your email address" />
                         </div>
                         <div className="m_card_content">
                             <label for="name" className='m_card_content-text'>Password : </label><br />
-                            <input type="password" id="myInput" name="password" placeholder="Enter your password"  />
+                            <input type="password" id="myInput" name="password" placeholder="Enter your password" />
                         </div>
                         <div>
-                            <input type="checkbox" onClick={()=>myFunction()}    />Show Password
-                            <label for="name"></label>
+                            <input type="checkbox" onClick={()=>myFunction()} />
+                            <label for="">Show Password</label>
                         </div>
                         <div>
-                            <button className='btn btn-danger w-100 py-2 my-2'>Sign In</button>
+                            <button type='submit' className='btn btn-danger w-100 py-2 my-2' >Sign In</button>
                         </div>
                         <div>
-                            <button className='btn btn-danger w-100 py-2 my-2'><span className='register_icon' onClick={()=>handleGoogleLogin()}><FcGoogle></FcGoogle></span>Sign In with Google</button>
+                            <button type="submit" className='btn btn-danger w-100 py-2 my-2'><span className='register_icon' obSubmit={handleGoogleLogin} ><FcGoogle></FcGoogle></span>Sign In with Google</button>
                         </div>
                         <div>
                             <button className='btn btn-danger w-100 py-2 my-2'><span className='register_icon'><ImGithub></ImGithub></span>Sign In with GitHub</button>
