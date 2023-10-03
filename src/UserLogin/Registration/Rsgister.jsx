@@ -69,29 +69,29 @@ const Rsgister = () => {
         }).catch(error => console.log(error))
        
     }
-    const loginWithGitHub = (e) => {
-        e.preventDefault();
-        gitHubLogin()
-        .then((result) => {
-            const user = result.user;
-            setUser(user);
-            setSuccess("Your GitHub registration is successful")
+    // const loginWithGitHub = (e) => {
+    //     e.preventDefault();
+    //     gitHubLogin()
+    //     .then((result) => {
+    //         const user = result.user;
+    //         setUser(user);
+    //         setSuccess("Your GitHub registration is successful")
 
-        }).catch(error => console.log(error))
+    //     }).catch(error => console.log(error))
        
-    }
-    const loginWithFacebook = (e) => {
-        e.preventDefault();
-        facebookLogin()
-        .then(result=>{
-            const user = result.user;
-            setUser(user)
-            setSuccess("Yor Facebook Login is successful")
-        })
-        .catch(error=>{
-            "Firebase Error", error;
-        })
-    }
+    // }
+    // const loginWithFacebook = (e) => {
+    //     e.preventDefault();
+    //     facebookLogin()
+    //     .then(result=>{
+    //         const user = result.user;
+    //         setUser(user)
+    //         setSuccess("Yor Facebook Login is successful")
+    //     })
+    //     .catch(error=>{
+    //         "Firebase Error", error;
+    //     })
+    // }
 
 
     
@@ -137,12 +137,12 @@ const Rsgister = () => {
                         <div>
                             <button onClick={LoginWithGoogle}  className="btn btn-danger w-100 py-2 my-2"><span className='register_icon'><FcGoogle></FcGoogle></span>Login With Google</button>
                         </div>
-                        <div>
+                        {/* <div>
                             <button onClick={loginWithGitHub} className='btn btn-danger w-100 py-2 my-2'><span className='register_icon' ><ImGithub></ImGithub></span>Sign In with GitHub</button>
-                        </div>
-                        <div>
+                        </div> */}
+                        {/* <div>
                             <button onClick={loginWithFacebook} className='btn btn-danger w-100 py-2 my-2'><span className='register_icon' ><BsFacebook></BsFacebook></span>Sign In with Facebook</button>
-                        </div>
+                        </div> */}
                         <div>
                             <span>Already have an account?<Link to="/signin" className='text-decoration-none'>Please Login</Link></span>
                         </div>

@@ -14,6 +14,7 @@ import Service from './../Components/Dashboard/Service/Service';
 import Project from "../Components/Dashboard/Project/Project";
 import Contact from "../Components/Dashboard/Contact/Contact";
 import Footer from "../Components/Dashboard/Footer/Footer";
+import PrivetRoute from "./PrivetRouter/PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home />
+                element:<PrivetRoute><Home /></PrivetRoute>
             },
             {
                 path:'/order',
