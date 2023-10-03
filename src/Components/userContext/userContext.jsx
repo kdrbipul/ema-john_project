@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import {createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 
 
@@ -11,7 +11,7 @@ export const AuthContext = createContext('');
 const userContext = ({children}) => {
 
 const googleProvider = new GoogleAuthProvider();
-const gitHubProvider = new GoogleAuthProvider();
+const gitHubProvider = new GithubAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
 
