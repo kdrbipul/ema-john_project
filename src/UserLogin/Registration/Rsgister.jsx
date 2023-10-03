@@ -2,15 +2,16 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ImGithub } from 'react-icons/im';
 import { FcGoogle } from 'react-icons/fc';
+import { BsFacebook } from 'react-icons/bs';
 import "./Register.css";
 import { AuthContext } from '../../Components/userContext/UserContext';
 
 
 const Rsgister = () => {
 
-    const { googleLogin,createUser} = useContext(AuthContext);
+    const { googleLogin,createUser,gitHubLogin,facebookLogin} = useContext(AuthContext);
     const [success,setSuccess]=useState()
-
+    const [passwordError,setPasswordError] = useState();
     const [sUser, setUser] = useState({}); 
     console.log(sUser);
 
@@ -34,6 +35,26 @@ const Rsgister = () => {
         .catch((error)=>{
             "Firebase Error", error;
         })
+
+        // Password Validation
+        if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
+            setPasswordError('At Least Two Uppercase');
+            return false;
+        }
+        
+        if(!/(?=.*[a-z])/.test(password)){
+            setPasswordError('At Least One Lowercase')
+            return false;
+        }
+        if(!/(?=.*[!@#$%^&*()?,?/"';:={}+_-])/.test(password)){
+            setPasswordError('At Least One Special');
+            return false;
+        }
+        if(password.length <8){
+            setPasswordError('Minimum 8 Characters');
+            return false;
+        }
+        setPasswordError('');
     }
 
 
@@ -47,6 +68,29 @@ const Rsgister = () => {
 
         }).catch(error => console.log(error))
        
+    }
+    const loginWithGitHub = (e) => {
+        e.preventDefault();
+        gitHubLogin()
+        .then((result) => {
+            const user = result.user;
+            setUser(user);
+            setSuccess("Your GitHub registration is successful")
+
+        }).catch(error => console.log(error))
+       
+    }
+    const loginWithFacebook = (e) => {
+        e.preventDefault();
+        facebookLogin()
+        .then(result=>{
+            const user = result.user;
+            setUser(user)
+            setSuccess("Yor Facebook Login is successful")
+        })
+        .catch(error=>{
+            "Firebase Error", error;
+        })
     }
 
 
@@ -76,7 +120,8 @@ const Rsgister = () => {
                         </div>
                         <div className="m_card_content">
                             <label htmlFor="password" className='m_card_content-text'>Password : </label><br />
-                            <input type="password" id="myInput" name="password" placeholder="Enter your email address" required/>
+                            <input type="password" id="myInput" name="password" placeholder="Enter your password" required  />
+                            <span className='text-danger'>{passwordError}</span>
                         </div>
                         
                         <div>
@@ -93,7 +138,10 @@ const Rsgister = () => {
                             <button onClick={LoginWithGoogle}  className="btn btn-danger w-100 py-2 my-2"><span className='register_icon'><FcGoogle></FcGoogle></span>Login With Google</button>
                         </div>
                         <div>
-                            <button className='btn btn-danger w-100 py-2 my-2'><span className='register_icon'><ImGithub></ImGithub></span>Sign In with GitHub</button>
+                            <button onClick={loginWithGitHub} className='btn btn-danger w-100 py-2 my-2'><span className='register_icon' ><ImGithub></ImGithub></span>Sign In with GitHub</button>
+                        </div>
+                        <div>
+                            <button onClick={loginWithFacebook} className='btn btn-danger w-100 py-2 my-2'><span className='register_icon' ><BsFacebook></BsFacebook></span>Sign In with Facebook</button>
                         </div>
                         <div>
                             <span>Already have an account?<Link to="/signin" className='text-decoration-none'>Please Login</Link></span>
