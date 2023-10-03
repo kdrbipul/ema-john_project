@@ -6,7 +6,7 @@ import "./Header.css"
 const Header = () => {
     return (
         <>
-        <nav className="navbar navbar-expand-lg bg-warning">
+        <nav className="navbar navbar-expand-lg bg-warning ">
             <div className="container">
                 
                     <NavLink className="navbar-brand" to="/"><img src={logo} alt="" /></NavLink>
